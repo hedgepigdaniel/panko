@@ -10,7 +10,7 @@ export const accountsInit = () => (dispatch) => {
     web3.eth.getAccounts((err, accs) => {
       if (err != null) {
         dispatch(accountsInitError(err))
-      } else if (accs.length == 0) {
+      } else if (accs.length === 0) {
         dispatch(accountsInitError('No accounts found!'))
       } else {
         dispatch(accountsInitSuccess(accs))
