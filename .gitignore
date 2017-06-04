@@ -11,3 +11,7 @@ npm-debug.log
 
 # Build
 build
+
+# IDEs
+.idea/
+
