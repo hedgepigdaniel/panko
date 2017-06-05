@@ -1,16 +1,16 @@
 import React from 'react'
 import { Link, Switch, Route } from 'react-router-dom'
 
-import withProgressBar from 'components/ProgressBar'
+import withProgressBar from 'components/ProgressBar/index.jsx'
 
 // Static containers
-import Login from 'containers/Login'
+import Login from 'containers/Login/index.jsx'
 
 // Bundle loader
-import { lazyBundle } from 'components/Bundle'
+import { lazyBundle } from 'components/Bundle/index.jsx'
 
 // Todolist container
-const Todolist = lazyBundle(() => import(/* webpackChunkName: "module-todolist" */ 'containers/Todolist'))
+const Todolist = lazyBundle(() => import(/* webpackChunkName: "module-todolist" */ 'containers/Todolist/index.js'))
 
 /**
  * Root application component

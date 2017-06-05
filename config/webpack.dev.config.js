@@ -16,7 +16,7 @@ module.exports = merge(base, {
   entry: {
     app: [
       'react-hot-loader/patch',
-      './app/index.js',
+      './app/index.jsx',
     ],
   },
 

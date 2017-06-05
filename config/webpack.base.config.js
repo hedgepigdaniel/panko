@@ -1,6 +1,5 @@
 const { resolve } = require('path')
 const webpack = require('webpack')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   output: {
@@ -22,7 +21,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        use: ['babel-loader', 'eslint-loader'],
       },
       // svg
       {
@@ -40,11 +39,11 @@ module.exports = {
       // css / scss
       {
         test: /\.(css|scss)$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          // resolve-url-loader may be chained before sass-loader if necessary
-          use: ['css-loader', 'sass-loader'],
-        }),
+        use: 'css-loader',
+      },
+      {
+        test: /\.scss$/,
+        use: 'sass-loader',
       },
       // Fonts
       {
@@ -67,6 +66,5 @@ module.exports = {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
       },
     }),
-    new ExtractTextPlugin('style.css'),
   ],
 }

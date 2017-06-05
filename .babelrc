@@ -1,29 +1,9 @@
 {
   "presets": [
-    "stage-0",
-    ["env", {
-      "targets": {
-        "browsers": ["last 2 versions", "safari >= 7"],
-      },
-      "modules": false,
-    }],
-    "react"
+    "airbnb"
   ],
-  "env": {
-    "test": {
-      "presets": [
-        ["env", { "modules": "commonjs" }],
-      ],
-    },
-    "production": {
-      "plugins": [
-        "transform-react-remove-prop-types",
-        "transform-react-constant-elements",
-      ]
-    },
-  },
   "plugins": [
-    "transform-decorators-legacy",
-    "transform-class-properties",
-  ],
+    "syntax-dynamic-import",
+    "transform-class-properties"
+  ]
 }

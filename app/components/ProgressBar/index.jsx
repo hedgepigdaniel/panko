@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
 import PropTypes from 'prop-types'
-import autobind from 'autobind-decorator'
-import ProgressBar from './ProgressBar'
+import ProgressBar from './ProgressBar.jsx'
 
 function withProgressBar (WrappedComponent) {
-  @withRouter
   class AppWithProgressBar extends Component {
 
     static propTypes = {
@@ -49,10 +47,9 @@ function withProgressBar (WrappedComponent) {
       this.unsubscribeHistory = undefined
     }
 
-    @autobind
-    updateProgress (progress) {
+    updateProgress = (progress) => {
       this.setState({ progress })
-    }
+    };
 
     render () {
       return (
@@ -64,7 +61,7 @@ function withProgressBar (WrappedComponent) {
     }
   }
 
-  return AppWithProgressBar
+  return withRouter(AppWithProgressBar)
 }
 
 export default withProgressBar

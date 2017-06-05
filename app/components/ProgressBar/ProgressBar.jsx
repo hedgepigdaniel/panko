@@ -6,8 +6,6 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import Wrapper from './Wrapper'
-import Percent from './Percent'
 
 class ProgressBar extends React.Component {
 
@@ -112,9 +110,7 @@ class ProgressBar extends React.Component {
     const style = { width: `${(percent <= 0 ? 0 : percent)}%` }
 
     return (
-      <Wrapper hidden={isHidden}>
-        <Percent style={style} />
-      </Wrapper>
+      <div>{percent}</div>
     )
   }
 }

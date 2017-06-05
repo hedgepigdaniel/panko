@@ -1,23 +1,13 @@
-import get from 'lodash/get'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import Dialog from 'material-ui/Dialog'
-
 import { closeModal } from './actions'
 
 const types = {}
 
-@connect(
-  state => ({
-    type: state.getIn(['modal', 'type']),
-    props: state.getIn(['modal', 'props']),
-  }),
-  dispatch => bindActionCreators({ closeModal }, dispatch)
-)
-export default class ModalProvider extends Component {
+class _ModalProvider extends Component {
 
   static propTypes = {
     type: PropTypes.string,
@@ -44,15 +34,9 @@ export default class ModalProvider extends Component {
 
   renderModal () {
     // Retrieve dynamic modal content
-    const ModalContent = get(types[this.props.type], 'component', () => false)
+    const ModalContent = types[this.props.type].component
     return (
-      <Dialog
-        open={!!this.props.type}
-        actions={[]}
-        onRequestClose={this.props.closeModal}
-      >
-        <ModalContent closeModal={this.props.closeModal} />
-      </Dialog>
+      <ModalContent closeModal={this.props.closeModal} />
     )
   }
 
@@ -65,3 +49,12 @@ export default class ModalProvider extends Component {
     )
   }
 }
+
+export default ModalProvider = connect(
+  state => ({
+    type: state.getIn(['modal', 'type']),
+    props: state.getIn(['modal', 'props']),
+  }),
+  dispatch => bindActionCreators({ closeModal }, dispatch),
+  _ModalProvider
+)

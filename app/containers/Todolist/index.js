@@ -1,17 +1,17 @@
 // createWrapper
-import { createWrapper } from 'components/Bundle'
+import { createWrapper } from 'components/Bundle/index.jsx'
 
 // Constants
 import {
   MODAL_TYPES,
-} from './constants'
+} from './constants.js'
 
 // Component & reducer
-import reducer from './reducer'
-import Todolist from './Todolist'
+import reducer from './reducer.js'
+import Todolist from './Todolist.jsx'
 
 // Modals
-import EditModal from './EditModal'
+import EditModal from './EditModal.jsx'
 
 // Export component loader
 export default createWrapper(Todolist, {

@@ -9,7 +9,7 @@ module.exports = merge(base, {
 
   entry: {
     app: [
-      './app/index.js',
+      './app/index.jsx',
     ],
   },
 

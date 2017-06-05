@@ -10,7 +10,6 @@
  *   return state.set('yourStateVariable', true);
  */
 import { fromJS, Map } from 'immutable'
-import { uniqueId } from 'lodash'
 
 import {
   CHANGE_NEW_ITEM_VALUE,
@@ -46,7 +45,7 @@ function todolistReducer (state = initialState, action) {
         .set('items', state.get('items').push(Map({
           name: action.payload,
           done: false,
-          id: uniqueId(),
+          id: Math.random(),
         })))
         .set('newItemValue', '')
     case CHANGE_NEW_ITEM_VALUE:
