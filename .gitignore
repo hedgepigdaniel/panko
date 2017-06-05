@@ -1,16 +1,9 @@
 # Caches and packages
-.truffle-solidity-loader
-.cache
 node_modules
-.node-xml*
-chains.json
 
 # Logs
 yarn-error.log
 npm-debug.log
-
-# Build
-build
 
 # IDEs
 .idea/
