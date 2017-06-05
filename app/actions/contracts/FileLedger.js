@@ -1,1 +1,0 @@
-export const FILELEDGER_UPLOAD_FILE
