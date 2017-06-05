@@ -1,5 +1,5 @@
-import { PureComponent } from 'react'
-import PropTypes from 'prop-types'
+import { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 
 /**
  * React bundle
@@ -9,6 +9,11 @@ export default class Bundle extends PureComponent {
 
   static propTypes = {
     loader: PropTypes.func.isRequired,
+    children: PropTypes.func,
+  }
+
+  static defaultProps = {
+    children: undefined,
   }
 
   static contextTypes = {
@@ -21,32 +26,32 @@ export default class Bundle extends PureComponent {
     mod: null,
   }
 
-  componentWillMount () {
-    this.load(this.props)
+  componentWillMount() {
+    this.load(this.props);
   }
 
-  componentWillReceiveProps (nextProps) {
+  componentWillReceiveProps(nextProps) {
     if (nextProps.loader !== this.props.loader) {
-      this.load(nextProps)
+      this.load(nextProps);
     }
   }
 
-  load (props) {
-    this.context.loadStart()
+  load(props) {
+    this.context.loadStart();
     this.setState({
       mod: null,
-    })
-    props.loader().then(mod => {
+    });
+    props.loader().then((mod) => {
       this.setState({
         // handle both es imports and cjs
         mod: mod.default,
-      })
-      this.context.loadEnd()
-      this.render()
-    })
+      });
+      this.context.loadEnd();
+      this.render();
+    });
   }
 
-  render () {
-    return this.state.mod ? this.props.children(this.state.mod) : false
+  render() {
+    return this.state.mod ? this.props.children(this.state.mod) : false;
   }
 }

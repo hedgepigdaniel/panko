@@ -1,38 +1,38 @@
-import { createStore, applyMiddleware, compose } from 'redux'
-import { fromJS } from 'immutable'
-import { routerMiddleware } from 'react-router-redux'
+import { createStore, applyMiddleware, compose } from 'redux';
+import { fromJS } from 'immutable';
+import { routerMiddleware } from 'react-router-redux';
 
-import createReducer from './reducers'
+import createReducer from './reducers';
 
 
-export default function configureStore (initialState = {}, history) {
+export default function configureStore(initialState = {}, history) {
   // Create the store with middlewares
   // 1. routerMiddleware: Syncs the location/URL path to the state
   const middlewares = [
     routerMiddleware(history),
-  ]
+  ];
 
   const enhancers = [
     applyMiddleware(...middlewares),
-  ]
+  ];
 
   // If Redux DevTools Extension is installed use it, otherwise use Redux compose
-  /* eslint-disable no-underscore-dangle */
+  /* eslint-disable no-underscore-dangle,no-undef */
   const composeEnhancers =
     process.env.NODE_ENV !== 'production' &&
     typeof window === 'object' &&
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
-      window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : compose
+      window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : compose;
   /* eslint-enable */
 
   const store = createStore(
     createReducer(),
     fromJS(initialState),
-    composeEnhancers(...enhancers)
-  )
+    composeEnhancers(...enhancers),
+  );
 
   // Extensions
-  store.asyncReducers = {} // Async reducer registry
+  store.asyncReducers = {}; // Async reducer registry
 
   // Make reducers hot reloadable, see http://mxs.is/googmo
   /* istanbul ignore next */
@@ -47,5 +47,5 @@ export default function configureStore (initialState = {}, history) {
   //   })
   // }
 
-  return store
+  return store;
 }

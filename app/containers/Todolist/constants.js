@@ -9,12 +9,12 @@
  * export const YOUR_ACTION_CONSTANT = 'yourproject/YourContainer/YOUR_ACTION_CONSTANT';
  */
 
-export const CHANGE_NEW_ITEM_VALUE = 'imtf/Todolist/CHANGE_NEW_ITEM_VALUE'
-export const ADD_ITEM = 'imtf/Todolist/ADD_ITEM'
-export const EDIT_ITEM = 'imtf/Todolist/EDIT_ITEM'
-export const MARK_AS_DONE = 'imtf/Todolist/MARK_AS_DONE'
-export const MARK_AS_UNDONE = 'imtf/Todolist/MARK_AS_UNDONE'
+export const CHANGE_NEW_ITEM_VALUE = 'imtf/Todolist/CHANGE_NEW_ITEM_VALUE';
+export const ADD_ITEM = 'imtf/Todolist/ADD_ITEM';
+export const EDIT_ITEM = 'imtf/Todolist/EDIT_ITEM';
+export const MARK_AS_DONE = 'imtf/Todolist/MARK_AS_DONE';
+export const MARK_AS_UNDONE = 'imtf/Todolist/MARK_AS_UNDONE';
 
 export const MODAL_TYPES = {
   EDIT_ITEM: 'imtf/Todolist/modal/EDIT_ITEM',
-}
+};

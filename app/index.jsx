@@ -1,9 +1,9 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { AppContainer } from 'react-hot-loader'
-import { Provider } from 'react-redux'
-import createHistory from 'history/createBrowserHistory'
-import { ConnectedRouter } from 'react-router-redux'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
+import { Provider } from 'react-redux';
+import createHistory from 'history/createBrowserHistory';
+import { ConnectedRouter } from 'react-router-redux';
 
 
 /**
@@ -11,44 +11,42 @@ import { ConnectedRouter } from 'react-router-redux'
  * It should be wrapping the ConnectedRouter as redux's
  * connect prevent props propagation
  */
-import ModalProvider from 'containers/Modal/index.jsx'
+import ModalProvider from 'containers/Modal/index.jsx';
 
 // Redux store configurator
-import configureStore from './store'
+import configureStore from './store';
 
 // App root component
-import Root from './containers/Root/index.jsx'
+import Root from './containers/Root/index.jsx';
 
 // App css
-import './index.scss'
+import './index.scss';
 
 // Create a history of your choosing (we're using a browser history in this case)
-const history = createHistory()
+const history = createHistory();
 
 // Create redux store with initial state and history
-const store = configureStore({}, history)
+const store = configureStore({}, history);
 
-const render = Component => {
+const render = (Component) => {
   ReactDOM.render(
     <AppContainer>
-      <MuiThemeProvider>
-        <Provider store={store}>
-          <ModalProvider>
-            <ConnectedRouter history={history}>
-              <Component />
-            </ConnectedRouter>
-          </ModalProvider>
-        </Provider>
-      </MuiThemeProvider>
+      <Provider store={store}>
+        <ModalProvider>
+          <ConnectedRouter history={history}>
+            <Component />
+          </ConnectedRouter>
+        </ModalProvider>
+      </Provider>
     </AppContainer>,
-    document.getElementById('root')
-  )
-}
+    document.getElementById('root'),  // eslint-disable-line no-undef
+  );
+};
 
-render(Root)
+render(Root);
 
 if (module.hot) {
   module.hot.accept('./containers/Root/index.jsx', () => {
-    render(Root)
-  })
+    render(Root);
+  });
 }

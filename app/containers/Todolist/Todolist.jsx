@@ -1,9 +1,7 @@
-import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-import ImmutablePropTypes from 'react-immutable-proptypes'
-import { connect } from 'react-redux'
-
-import IconEdit from 'icons/edit.svg'
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import ImmutablePropTypes from 'react-immutable-proptypes';
+import { connect } from 'react-redux';
 
 // Import actions
 import {
@@ -12,10 +10,10 @@ import {
   markAsDone,
   markAsUndone,
   editItemDialog,
-} from './actions'
+} from './actions';
 
 // Selectors
-import selectors from './selectors'
+import selectors from './selectors';
 
 class _Todolist extends PureComponent {
 
@@ -30,30 +28,29 @@ class _Todolist extends PureComponent {
   }
 
   changeNewItemValue = (event) => {
-    this.props.changeNewItemValue(event.target.value)
+    this.props.changeNewItemValue(event.target.value);
   };
 
   toggleCheckbox = (item) => {
     if (item.get('done') === false) {
-      this.props.markAsDone(item)
+      this.props.markAsDone(item);
     } else {
-      this.props.markAsUndone(item)
+      this.props.markAsUndone(item);
     }
   };
 
   editItemDialog = (item, event) => {
-    event.stopPropagation()
-    this.props.editItemDialog(item)
+    event.stopPropagation();
+    this.props.editItemDialog(item);
   };
 
   submitForm = (e) => {
-    e.preventDefault()
-    this.props.addItem(this.props.newItemValue)
-    snacky(`${this.props.newItemValue} added`)
+    e.preventDefault();
+    this.props.addItem(this.props.newItemValue);
   };
 
-  render () {
-    const { items } = this.props
+  render() {
+    const { items } = this.props;
 
     return (
       <div>
@@ -68,14 +65,14 @@ class _Todolist extends PureComponent {
         </ul>
         <hr />
         <form onSubmit={this.submitForm}>
-          <TextField value={this.props.newItemValue} onChange={this.changeNewItemValue} name="new-item" />
+          <input type="text" value={this.props.newItemValue} onChange={this.changeNewItemValue} name="new-item" />
         </form>
       </div>
-    )
+    );
   }
 }
 
-export default Todolist =connect(
+export default connect(
   selectors,
   dispatch => ({
     changeNewItemValue: value => dispatch(changeNewItemValue(value)),
@@ -84,5 +81,5 @@ export default Todolist =connect(
     markAsUndone: item => dispatch(markAsUndone(item)),
     editItemDialog: item => dispatch(editItemDialog(item)),
   }),
-  _Todolist
-)
+  _Todolist,
+);

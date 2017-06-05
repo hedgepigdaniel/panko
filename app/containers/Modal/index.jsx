@@ -1,17 +1,18 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-import { closeModal } from './actions'
+import { closeModal } from './actions';
 
-const types = {}
+const types = {};
 
 class _ModalProvider extends Component {
 
   static propTypes = {
     type: PropTypes.string,
     closeModal: PropTypes.func.isRequired,
+    children: PropTypes.node.isRequired,
   }
 
   static defaultProps = {
@@ -22,39 +23,39 @@ class _ModalProvider extends Component {
     addModalTypes: PropTypes.func,
   }
 
-  getChildContext () {
+  getChildContext() {
     return {
-      addModalTypes: newTypes => {
-        newTypes.forEach(type => {
-          types[type.type] = type
-        })
+      addModalTypes: (newTypes) => {
+        newTypes.forEach((type) => {
+          types[type.type] = type;
+        });
       },
-    }
+    };
   }
 
-  renderModal () {
+  renderModal() {
     // Retrieve dynamic modal content
-    const ModalContent = types[this.props.type].component
+    const ModalContent = types[this.props.type].component;
     return (
       <ModalContent closeModal={this.props.closeModal} />
-    )
+    );
   }
 
-  render () {
+  render() {
     return (
       <div>
         { this.props.children }
         { this.renderModal() }
       </div>
-    )
+    );
   }
 }
 
-export default ModalProvider = connect(
+export default connect(
   state => ({
     type: state.getIn(['modal', 'type']),
     props: state.getIn(['modal', 'props']),
   }),
   dispatch => bindActionCreators({ closeModal }, dispatch),
-  _ModalProvider
-)
+  _ModalProvider,
+);

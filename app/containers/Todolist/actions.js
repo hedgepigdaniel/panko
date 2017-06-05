@@ -10,7 +10,7 @@
  */
 import {
    SHOW_MODAL,
- } from 'containers/Modal/constants'
+ } from 'containers/Modal/constants';
 import {
   CHANGE_NEW_ITEM_VALUE,
   ADD_ITEM,
@@ -19,50 +19,50 @@ import {
   EDIT_ITEM,
 
   MODAL_TYPES,
-} from './constants'
+} from './constants';
 
 
-export function changeNewItemValue (value) {
+export function changeNewItemValue(value) {
   return {
     type: CHANGE_NEW_ITEM_VALUE,
     payload: value,
-  }
+  };
 }
 
-export function addItem (item) {
+export function addItem(item) {
   return {
     type: ADD_ITEM,
     payload: item,
-  }
+  };
 }
 
-export function markAsDone (item) {
+export function markAsDone(item) {
   return {
     type: MARK_AS_DONE,
     payload: item,
-  }
+  };
 }
 
-export function editItem (item) {
+export function editItem(item) {
   return {
     type: EDIT_ITEM,
     payload: item,
-  }
+  };
 }
 
-export function markAsUndone (item) {
+export function markAsUndone(item) {
   return {
     type: MARK_AS_UNDONE,
     payload: item,
-  }
+  };
 }
 
-export function editItemDialog (item) {
+export function editItemDialog(item) {
   return {
     type: SHOW_MODAL,
     payload: {
       type: MODAL_TYPES.EDIT_ITEM,
       props: item,
     },
-  }
+  };
 }

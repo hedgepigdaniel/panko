@@ -9,7 +9,7 @@
  * case YOUR_ACTION_CONSTANT:
  *   return state.set('yourStateVariable', true);
  */
-import { fromJS, Map } from 'immutable'
+import { fromJS, Map } from 'immutable';
 
 import {
   CHANGE_NEW_ITEM_VALUE,
@@ -17,7 +17,7 @@ import {
   EDIT_ITEM,
   MARK_AS_DONE,
   MARK_AS_UNDONE,
-} from './constants'
+} from './constants';
 
 
 // The initial state of the component
@@ -26,19 +26,19 @@ const initialState = fromJS({
     {
       name: 'First item in list',
       done: false,
-      id: uniqueId(),
+      id: Math.random(),
     },
     {
       name: 'Second item in list',
       done: true,
-      id: uniqueId(),
+      id: Math.random(),
     },
   ],
   newItemValue: '',
-})
+});
 
 
-function todolistReducer (state = initialState, action) {
+function todolistReducer(state = initialState, action) {
   switch (action.type) {
     case ADD_ITEM:
       return state
@@ -47,36 +47,36 @@ function todolistReducer (state = initialState, action) {
           done: false,
           id: Math.random(),
         })))
-        .set('newItemValue', '')
+        .set('newItemValue', '');
     case CHANGE_NEW_ITEM_VALUE:
       return state
-        .set('newItemValue', action.payload)
+        .set('newItemValue', action.payload);
     case MARK_AS_DONE:
       return state
         .setIn([
           'items',
           state.get('items').indexOf(action.payload),
           'done',
-        ], true)
+        ], true);
     case MARK_AS_UNDONE:
       return state
         .setIn([
           'items',
           state.get('items').indexOf(action.payload),
           'done',
-        ], false)
+        ], false);
     case EDIT_ITEM: {
-      const replaceIndex = action.payload.get('id')
-      const index = state.get('items').findIndex(i => i.get('id') === replaceIndex)
+      const replaceIndex = action.payload.get('id');
+      const index = state.get('items').findIndex(i => i.get('id') === replaceIndex);
       return state.setIn([
         'items',
         index,
-      ], action.payload)
+      ], action.payload);
     }
 
     default:
-      return state
+      return state;
   }
 }
 
-export default todolistReducer
+export default todolistReducer;

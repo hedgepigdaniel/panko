@@ -1,16 +1,16 @@
-import React from 'react'
-import { Link, Switch, Route } from 'react-router-dom'
+import React from 'react';
+import { Link, Switch, Route } from 'react-router-dom';
 
-import withProgressBar from 'components/ProgressBar/index.jsx'
+import withProgressBar from 'components/ProgressBar/index.jsx';
 
 // Static containers
-import Login from 'containers/Login/index.jsx'
+import Login from 'containers/Login/index.jsx';
 
 // Bundle loader
-import { lazyBundle } from 'components/Bundle/index.jsx'
+import { lazyBundle } from 'components/Bundle/index.jsx';
 
 // Todolist container
-const Todolist = lazyBundle(() => import(/* webpackChunkName: "module-todolist" */ 'containers/Todolist/index.js'))
+const Todolist = lazyBundle(() => import(/* webpackChunkName: "module-todolist" */ 'containers/Todolist/index.js'));
 
 /**
  * Root application component
@@ -19,7 +19,7 @@ const Todolist = lazyBundle(() => import(/* webpackChunkName: "module-todolist" 
  * @return {ReactElement} markup
  */
 
-function Root () {
+function Root() {
   return (
     <div>
       <ul>
@@ -33,7 +33,7 @@ function Root () {
         <Route path="/login" component={Login} />
       </Switch>
     </div>
-  )
+  );
 }
 
-export default withProgressBar(Root)
+export default withProgressBar(Root);

@@ -1,11 +1,11 @@
-import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-import ImmutablePropTypes from 'react-immutable-proptypes'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import ImmutablePropTypes from 'react-immutable-proptypes';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-import { updateModal } from 'containers/Modal/actions'
-import { editItem } from './actions'
+import { updateModal } from 'containers/Modal/actions';
+import { editItem } from './actions';
 
 class _EditModal extends PureComponent {
 
@@ -17,33 +17,31 @@ class _EditModal extends PureComponent {
   };
 
   save = (event) => {
-    event.preventDefault()
-    this.props.editItem(this.props.item)
-    this.props.closeModal()
+    event.preventDefault();
+    this.props.editItem(this.props.item);
+    this.props.closeModal();
   };
 
   edit = (event) => {
-    const newItem = this.props.item.set('name', event.target.value)
-    this.props.updateModal(newItem)
+    const newItem = this.props.item.set('name', event.target.value);
+    this.props.updateModal(newItem);
   };
 
-  render () {
+  render() {
     return (
       <form onSubmit={this.save}>
         <div>{'Edit item'}</div>
-        <div>
-        </div>
-        <div>
-        </div>
+        <div />
+        <div />
       </form>
-    )
+    );
   }
 }
 
-export default EditModal = connect(
+export default connect(
   state => ({
     item: state.getIn(['modal', 'props']),
   }),
   dispatch => bindActionCreators({ updateModal, editItem }, dispatch),
-  _EditModal
-)
+  _EditModal,
+);

@@ -2,7 +2,9 @@
   "parser": "babel-eslint",
   "extends": "airbnb",
   "rules": {
-    "import/extensions": [1, "always"]
+    "import/extensions": [1, "always", { "js": "never" }],
+    "react/prefer-stateless-function": [1, {"ignorePureComponents": true}],
+    "max-len": [1, 120]
   },
   "settings": {
     "import/resolver": {

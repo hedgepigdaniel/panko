@@ -9,6 +9,6 @@
  * export const YOUR_ACTION_CONSTANT = 'yourproject/YourContainer/YOUR_ACTION_CONSTANT';
  */
 
-export const SHOW_MODAL = 'imtf/Modal/SHOW_MODAL'
-export const UPDATE_MODAL = 'imtf/Modal/UPDATE_MODAL'
-export const HIDE_MODAL = 'imtf/Modal/HIDE_MODAL'
+export const SHOW_MODAL = 'imtf/Modal/SHOW_MODAL';
+export const UPDATE_MODAL = 'imtf/Modal/UPDATE_MODAL';
+export const HIDE_MODAL = 'imtf/Modal/HIDE_MODAL';

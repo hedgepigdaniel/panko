@@ -1,17 +1,17 @@
 import {
   UPDATE_MODAL,
   HIDE_MODAL,
-} from './constants'
+} from './constants';
 
-export function updateModal (props) {
+export function updateModal(props) {
   return {
     type: UPDATE_MODAL,
     payload: props,
-  }
+  };
 }
 
-export function closeModal () {
+export function closeModal() {
   return {
     type: HIDE_MODAL,
-  }
+  };
 }
