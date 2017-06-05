@@ -67,4 +67,22 @@ module.exports = {
       },
     }),
   ],
-}
+
+  stats: {
+    colors: true,
+    hash: true,
+    version: true,
+    timings: true,
+    assets: true,
+    chunks: false,
+    chunkModules: true,
+    modules: false,
+    cachedModules: false,
+    cachedAssets: false,
+    reasons: false,
+    children: false,
+    errors: true,
+    warnings: true,
+    publicPath: false
+  },
+};

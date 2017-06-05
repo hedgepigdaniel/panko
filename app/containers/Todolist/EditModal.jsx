@@ -39,9 +39,13 @@ class _EditModal extends PureComponent {
 }
 
 export default connect(
-  state => ({
-    item: state.getIn(['modal', 'props']),
-  }),
-  dispatch => bindActionCreators({ updateModal, editItem }, dispatch),
+  (state) => {
+    return {
+      item: state.getIn(['modal', 'props']),
+    };
+  },
+  (dispatch) => {
+    return bindActionCreators({ updateModal, editItem }, dispatch);
+  },
   _EditModal,
 );

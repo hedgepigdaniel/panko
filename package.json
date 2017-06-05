@@ -1,7 +1,7 @@
 {
   "name": "file-ledger",
   "scripts": {
-    "start": "webpack-dev-server --config config/webpack.dev.config.js"
+    "build": "babel-node -- ./config/build.js"
   },
   "version": "0.0.1",
   "description": "DApp for staking a claim to a file",
@@ -10,6 +10,7 @@
   "author": "Daniel Playfair Cal <daniel.playfair.cal@gmail.com>, Anish Patil",
   "license": "MIT",
   "dependencies": {
+    "babel-cli": "6.24.1",
     "babel-core": "6.24.1",
     "babel-eslint": "7.2.3",
     "babel-loader": "7.0.0",
@@ -29,7 +30,7 @@
     "history": "4.6.1",
     "html-webpack-plugin": "2.28.0",
     "immutable": "3.8.1",
-    "node-sass": "4.5.3",
+    "node-sass": "^4.5.3",
     "prop-types": "15.5.10",
     "react": "15.5.4",
     "react-dom": "15.5.4",
@@ -46,6 +47,7 @@
     "url-loader": "0.5.8",
     "webpack": "2.6.1",
     "webpack-dev-server": "2.4.5",
-    "webpack-merge": "4.1.0"
+    "webpack-merge": "4.1.0",
+    "yargs": "8.0.1"
   }
 }

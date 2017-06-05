@@ -4,7 +4,8 @@
   "rules": {
     "import/extensions": [1, "always", { "js": "never" }],
     "react/prefer-stateless-function": [1, {"ignorePureComponents": true}],
-    "max-len": [1, 120]
+    "max-len": [1, 120],
+    "arrow-body-style": 0
   },
   "settings": {
     "import/resolver": {

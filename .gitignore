@@ -8,3 +8,6 @@ npm-debug.log
 # IDEs
 .idea/
 
+# Compiled assets
+dist/
+
