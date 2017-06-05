@@ -1,0 +1,9 @@
+{
+  "name": "file-ledger",
+  "version": "0.0.1",
+  "description": "DApp for staking a claim to a file",
+  "main": "index.js",
+  "repository": "git@github.com:hedgepigdaniel/panko.git",
+  "author": "Daniel Playfair Cal <daniel.playfair.cal@gmail.com>, Anish Patil",
+  "license": "MIT"
+}
