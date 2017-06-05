@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import createHistory from 'history/createBrowserHistory';
-import { ConnectedRouter } from 'react-router-redux';
+import { syncHistoryWithStore } from 'react-router-redux';
+import { AppContainer } from 'react-hot-loader';
+import { Router } from 'react-router';
 
 
 /**
@@ -23,19 +24,23 @@ import Root from './containers/Root/index.jsx';
 import './index.scss';
 
 // Create a history of your choosing (we're using a browser history in this case)
-const history = createHistory();
+let history = createHistory();
 
 // Create redux store with initial state and history
-const store = configureStore({}, history);
+const store = configureStore(history, {});
+
+history = syncHistoryWithStore(history, store, {
+  selectLocationState: state => state.get('routing'),
+});
 
 const render = (Component) => {
   ReactDOM.render(
     <AppContainer>
       <Provider store={store}>
         <ModalProvider>
-          <ConnectedRouter history={history}>
+          <Router history={history}>
             <Component />
-          </ConnectedRouter>
+          </Router>
         </ModalProvider>
       </Provider>
     </AppContainer>,

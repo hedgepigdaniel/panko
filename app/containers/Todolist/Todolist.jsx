@@ -81,5 +81,4 @@ export default connect(
     markAsUndone: item => dispatch(markAsUndone(item)),
     editItemDialog: item => dispatch(editItemDialog(item)),
   }),
-  _Todolist,
-);
+)(_Todolist);

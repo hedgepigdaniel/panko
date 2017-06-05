@@ -9,7 +9,7 @@ import modalReducer from 'containers/Modal/reducer';
  */
 export default function createReducer(asyncReducers) {
   return combineReducers({
-    router: routerReducer,
+    routing: routerReducer,
     modal: modalReducer,
     ...asyncReducers,
   });

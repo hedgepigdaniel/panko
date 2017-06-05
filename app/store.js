@@ -5,7 +5,7 @@ import { routerMiddleware } from 'react-router-redux';
 import createReducer from './reducers';
 
 
-export default function configureStore(initialState = {}, history) {
+export default function configureStore(history, initialState = {}) {
   // Create the store with middlewares
   // 1. routerMiddleware: Syncs the location/URL path to the state
   const middlewares = [

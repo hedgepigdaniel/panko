@@ -35,10 +35,14 @@ class _ModalProvider extends Component {
 
   renderModal() {
     // Retrieve dynamic modal content
-    const ModalContent = types[this.props.type].component;
-    return (
-      <ModalContent closeModal={this.props.closeModal} />
-    );
+    if (this.props.type) {
+      const ModalContent = types[this.props.type].component;
+      return (
+        <ModalContent closeModal={this.props.closeModal} />
+      );
+    } else {
+      return null;
+    }
   }
 
   render() {
@@ -57,5 +61,4 @@ export default connect(
     props: state.getIn(['modal', 'props']),
   }),
   dispatch => bindActionCreators({ closeModal }, dispatch),
-  _ModalProvider,
-);
+)(_ModalProvider);

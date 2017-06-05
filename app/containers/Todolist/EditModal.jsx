@@ -47,5 +47,4 @@ export default connect(
   (dispatch) => {
     return bindActionCreators({ updateModal, editItem }, dispatch);
   },
-  _EditModal,
-);
+)(_EditModal);
