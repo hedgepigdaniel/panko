@@ -4,8 +4,8 @@ import ImmutablePropTypes from 'react-immutable-proptypes';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { updateModal } from 'containers/Modal/actions';
-import { editItem } from './actions';
+import { updateModal } from 'containers/Modal/actions.jsx';
+import { editItem } from './actions.jsx';
 
 class _EditModal extends PureComponent {
 

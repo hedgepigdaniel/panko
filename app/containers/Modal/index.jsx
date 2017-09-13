@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { closeModal } from './actions';
+import { closeModal } from './actions.jsx';
 
 const types = {};
 

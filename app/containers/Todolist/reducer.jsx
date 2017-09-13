@@ -1,3 +1,4 @@
+
 /*
  * TodolistReducer
  *
@@ -17,7 +18,7 @@ import {
   EDIT_ITEM,
   MARK_AS_DONE,
   MARK_AS_UNDONE,
-} from './constants';
+} from './constants.jsx';
 
 
 // The initial state of the component

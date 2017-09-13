@@ -10,7 +10,7 @@
  */
 import {
    SHOW_MODAL,
- } from 'containers/Modal/constants';
+ } from 'containers/Modal/constants.jsx';
 import {
   CHANGE_NEW_ITEM_VALUE,
   ADD_ITEM,
@@ -19,7 +19,7 @@ import {
   EDIT_ITEM,
 
   MODAL_TYPES,
-} from './constants';
+} from './constants.jsx';
 
 
 export function changeNewItemValue(value) {

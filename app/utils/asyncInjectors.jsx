@@ -1,5 +1,5 @@
 
-import createReducer from '../reducers';
+import createReducer from '../reducers.jsx';
 
 
 /**

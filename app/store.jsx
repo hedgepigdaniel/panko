@@ -2,8 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { fromJS } from 'immutable';
 import { routerMiddleware } from 'react-router-redux';
 
-import createReducer from './reducers';
-
+import createReducer from './reducers.jsx';
 
 export default function configureStore(history, initialState = {}) {
   // Create the store with middlewares
@@ -24,7 +23,6 @@ export default function configureStore(history, initialState = {}) {
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
       window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : compose;
   /* eslint-enable */
-
   const store = createStore(
     createReducer(),
     fromJS(initialState),
@@ -33,19 +31,6 @@ export default function configureStore(history, initialState = {}) {
 
   // Extensions
   store.asyncReducers = {}; // Async reducer registry
-
-  // Make reducers hot reloadable, see http://mxs.is/googmo
-  /* istanbul ignore next */
-  // if (module.hot) {
-  //   module.hot.accept('./reducers', () => {
-  //     import('./reducers').then(reducerModule => {
-  //       const createReducers = reducerModule.default
-  //       const nextReducers = createReducers(store.asyncReducers)
-  //
-  //       store.replaceReducer(nextReducers)
-  //     })
-  //   })
-  // }
 
   return store;
 }

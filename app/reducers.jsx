@@ -2,7 +2,7 @@ import { combineReducers } from 'redux-immutable';
 import { routerReducer } from 'react-router-redux';
 
 // Root reducers
-import modalReducer from 'containers/Modal/reducer';
+import modalReducer from 'containers/Modal/reducer.jsx';
 
 /**
  * Creates the main reducer with the asynchronously loaded ones

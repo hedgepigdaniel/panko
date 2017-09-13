@@ -10,7 +10,7 @@ import Login from 'containers/Login/index.jsx';
 import { lazyBundle } from 'components/Bundle/index.jsx';
 
 // Todolist container
-const Todolist = lazyBundle(() => import(/* webpackChunkName: "module-todolist" */ 'containers/Todolist/index.js'));
+const Todolist = lazyBundle(() => import(/* webpackChunkName: "module-todolist" */ 'containers/Todolist/index.jsx'));
 
 /**
  * Root application component

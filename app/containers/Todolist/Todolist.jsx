@@ -10,10 +10,10 @@ import {
   markAsDone,
   markAsUndone,
   editItemDialog,
-} from './actions';
+} from './actions.jsx';
 
 // Selectors
-import selectors from './selectors';
+import selectors from './selectors.jsx';
 
 class _Todolist extends PureComponent {
 

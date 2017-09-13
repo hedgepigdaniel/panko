@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { injectAsyncReducer } from 'utils/asyncInjectors';
+import { injectAsyncReducer } from 'utils/asyncInjectors.jsx';
 
-import Bundle from './Bundle';
+import Bundle from './Bundle.jsx';
 
 /**
  * LazyBundle component generator

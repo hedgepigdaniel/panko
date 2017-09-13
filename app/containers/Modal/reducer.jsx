@@ -4,7 +4,7 @@ import {
     SHOW_MODAL,
     HIDE_MODAL,
     UPDATE_MODAL,
-} from './constants';
+} from './constants.jsx';
 
 
 const initialState = fromJS({

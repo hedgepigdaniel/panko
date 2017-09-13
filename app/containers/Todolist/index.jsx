@@ -4,10 +4,10 @@ import { createWrapper } from 'components/Bundle/index.jsx';
 // Constants
 import {
   MODAL_TYPES,
-} from './constants';
+} from './constants.jsx';
 
 // Component & reducer
-import reducer from './reducer';
+import reducer from './reducer.jsx';
 import Todolist from './Todolist.jsx';
 
 // Modals

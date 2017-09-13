@@ -1,7 +1,7 @@
 import {
   UPDATE_MODAL,
   HIDE_MODAL,
-} from './constants';
+} from './constants.jsx';
 
 export function updateModal(props) {
   return {
