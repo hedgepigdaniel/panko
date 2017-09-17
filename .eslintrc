@@ -6,7 +6,8 @@
     "react/prefer-stateless-function": [1, {"ignorePureComponents": true}],
     "max-len": [1, 120],
     "arrow-body-style": 0,
-    "no-else-return": 0
+    "no-else-return": 0,
+    "prefer-default-export": 0
   },
   "settings": {
     "import/resolver": {

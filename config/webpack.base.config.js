@@ -109,26 +109,26 @@ export default function (argv) {
       }),
       
       new webpack.LoaderOptionsPlugin({
-          options: {
-            jshint: {
-              undef: true,
-              browser: true,
-              devel: true,
-              sub: true, // Suppress errors about object['key'] cd object.key notation
-              scripturl: true,
-              eqnull: true,
-              expr: true,
-              boss: true,
-              loopfunc: true,
-              // jshint errors are displayed by default as warnings
-              // set emitErrors to true to display them as errors
-              emitErrors: false,
-              // jshint to not interrupt the compilation
-              // if you want any file with jshint errors to fail
-              // set failOnHint to true
-              failOnHint: true,
-            },
-          }
+        options: {
+          jshint: {
+            undef: true,
+            browser: true,
+            devel: true,
+            sub: true, // Suppress errors about object['key'] cd object.key notation
+            scripturl: true,
+            eqnull: true,
+            expr: true,
+            boss: true,
+            loopfunc: true,
+            // jshint errors are displayed by default as warnings
+            // set emitErrors to true to display them as errors
+            emitErrors: false,
+            // jshint to not interrupt the compilation
+            // if you want any file with jshint errors to fail
+            // set failOnHint to true
+            failOnHint: true,
+          },
+        },
       }),
     ],
 
